@@ -1,0 +1,48 @@
+package tugas1;
+
+import java.util.Scanner;
+public class Main {
+    static int celcius, pilih;
+    public static int input(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Input Suhu Celcius");
+        System.out.println("------------------");
+        System.out.print("Suhu dalam Celcius : ");
+        celcius=scan.nextInt();
+        return celcius;
+    }
+    
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        Konversi c = new Konversi();
+        System.out.println("---------------------");
+        System.out.println("Program Konversi Suhu");
+        System.out.println("---------------------");
+        input();
+        
+        do{
+            System.out.println("\nOpsi");
+            System.out.println("1.Lihat Data Konversi");
+            System.out.println("2.Edit Data Konversi");
+            System.out.println("3.Exit");
+            System.out.print("Pilih :  ");
+            pilih = scan.nextInt();
+            
+            switch(pilih){
+                case 1:
+                    System.out.println("Hasil Konversi");
+                    c.hasil(celcius);
+                    break;
+                case 2:
+                    System.out.println("\n");
+                    input();
+                    break;
+                case 3:
+                    System.exit(0);
+                default:
+                    System.out.println("Maaf Opsi Yang Anda Masukkan Tidak Tersedia");
+                    break;  
+            }
+        }while(pilih != 3);
+    }
+}
